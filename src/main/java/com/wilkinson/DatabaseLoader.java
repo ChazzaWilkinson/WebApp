@@ -1,0 +1,24 @@
+package com.wilkinson;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+@Component
+public class DatabaseLoader implements CommandLineRunner {
+
+	private final EmployeeRepository repository;
+
+	@Autowired
+	public DatabaseLoader(EmployeeRepository repository) {
+		this.repository = repository;
+	}
+
+	@Override
+	public void run(String... strings) throws Exception {
+		this.repository.save(new Employee("Charley", "Wilkinson", "C.E.O"));
+		this.repository.save(new Employee("Rupert", "Agnew", "Assistant Manager"));
+		this.repository.save(new Employee("David", "Cumming", "Secretary"));
+		this.repository.save(new Employee("Howard", "Hardy", "Bin Man"));
+	}
+}
