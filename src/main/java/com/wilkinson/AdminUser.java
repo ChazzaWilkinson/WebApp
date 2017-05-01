@@ -27,9 +27,8 @@ public class AdminUser {
 
 	private String[] roles;
 
-	public String setPassword(String password) {
+	public void setPassword(String password) {
 		this.password = PASSWORD_ENCODER.encode(password);
-		return this.password;
 	}
 
 	protected AdminUser() {}
@@ -37,13 +36,13 @@ public class AdminUser {
 	public AdminUser(String name, String password, String...roles) {
 
 		this.name = name;
-		this.password = password;
+		this.setPassword(password);
 		this.roles = roles;
 	}
 
 	public String getPassword() {
 		// TODO Auto-generated method stub
-		return this.setPassword(password);
+		return this.password;
 	}
 
 	public String getName() {
