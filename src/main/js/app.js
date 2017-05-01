@@ -66,11 +66,39 @@ class App extends React.Component {
 
 	// tag::delete[]
 	onDelete(employee) {
-		client({method: 'DELETE', path: employee._links.self.href}).done(response => {
-			this.loadFromServer(this.state.pageSize);
+		client({method: 'DELETE', path: employee.entity._links.self.href}
+		).done(response => {/* let the websocket handle updating the UI */},
+		response => {
+			if (response.status.code === 403) {
+				alert('ACCESS DENIED: You are not authorized to delete ' +
+					employee.entity._links.self.href);
+			}
 		});
 	}
 	// end::delete[]
+	
+	onUpdate(employee, updatedEmployee) {
+		client({
+			method: 'PUT',
+			path: employee.entity._links.self.href,
+			entity: updatedEmployee,
+			headers: {
+				'Content-Type': 'application/json',
+				'If-Match': employee.headers.Etag
+			}
+		}).done(response => {
+			/* Let the websocket handler update the state */
+		}, response => {
+			if (response.status.code === 403) {
+				alert('ACCESS DENIED: You are not authorized to update ' +
+					employee.entity._links.self.href);
+			}
+			if (response.status.code === 412) {
+				alert('DENIED: Unable to update ' + employee.entity._links.self.href +
+					'. Your copy is stale.');
+			}
+		});
+	}
 
 	// tag::navigate[]
 	onNavigate(navUri) {
