@@ -2,15 +2,68 @@ input.field {
     width: 90%;
 }
 
-table {
-    border-collapse: collapse;
+
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	width:70%; 
+    margin-left:25%; 
+    margin-right:15%;
 }
 
-td, th {
-    border: 1px solid #999;
+table {
+	font-family: Arial, Helvetica, sans-serif;
+    width:70%; 
+    margin-right:15%;
+
+}
+
+td {
+	font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid #c0c0c0;
     padding: 0.5rem;
     text-align: left;
+    
+    
 }
+
+th {
+	border: 1px solid #c0c0c0;
+    padding: 0.5rem;
+    text-align: center;
+    font-color: #333333;
+    background: #9fbff4;
+}
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 5px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+a {
+	background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 5px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    margin-left: 61%;
+}
+
 
 /*Classes for creating dialogs*/
 
