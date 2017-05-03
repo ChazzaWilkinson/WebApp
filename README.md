@@ -2,7 +2,8 @@
 
 
 Run with 'mvn spring-boot:run'
-Navitage to http://localhost:8080/
+
+Navigate to http://localhost:8080/
 
 The first Page is the Login page:
 https://cloud.githubusercontent.com/assets/11035537/25662223/a5e77d9e-300b-11e7-83c5-89f9e8f2acaf.PNG
