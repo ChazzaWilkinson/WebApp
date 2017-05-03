@@ -1,6 +1,5 @@
-# WebApp
+# CI346 - Web Application
 
-CI346 - Web Application
 
 Run with 'mvn spring-boot:run'
 Navitage to http://localhost:8080/
